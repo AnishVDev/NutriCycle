@@ -774,3 +774,21 @@ Resource Card
   background-position: center;
   min-height: 100vh;  /* Ensures it takes up space */
 }
+
+@media (max-width: 768px) {
+  .resource-card {
+    background: rgba(190, 244, 182, 0.9) !important; /* Ensure visibility */
+    padding: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .resource-card a {
+    font-size: 16px; /* Slightly smaller for mobile */
+  }
+
+  #resources {
+    background: url('images/texture.png') repeat !important;
+    background-size: cover !important;  
+    background-position: center;
+  }
+}
