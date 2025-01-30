@@ -792,3 +792,15 @@ Resource Card
     background-position: center;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0288d1; /* Change to your desired hover color */
+}
