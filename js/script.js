@@ -11,7 +11,14 @@
         }
 
     $(document).ready(function() {
-
+        $('.fsElementSlideshow').slick({
+          adaptiveHeight: true,
+          arrows: true,
+          autoplay: true,
+          dots: true,
+          fade: true,
+          slidesToShow: 1
+        });
       initChocolat();
 
       /* Video */

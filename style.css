@@ -164,6 +164,24 @@ a:hover {
   background-color: var(--bs-primary-rgb) !important;
 }
 
+#resources h2 {
+  background: linear-gradient(90deg, #0b480b, #0b802b);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.header-box {
+  background: rgba(11, 72, 11, 0.9);
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
 /*--------------------------------------------------------------
 /** 2.3 Section
 --------------------------------------------------------------*/
@@ -415,15 +433,52 @@ svg.primary-color-500 {
   margin: 0 8px;
 }
 
-.slider-pagination .swiper-pagination-bullet {
-  width: 50px;
-  height: 3px;
-  border-radius: 0;
-  background: #FFFFFF;
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
+.slider-pagination .swiper-pagination-bullet {
+  width: 50px;         /* Width of the bullet */
+  height: 3px;         /* Height of the bullet */
+  border-radius: 0;    /* Square bullets */
+  background: #FFFFFF; /* Default color of the bullet */
+  margin: 0 8px;       /* Space between bullets */
+}
+
+.swiper {
+  width: 100%;
+  height: 90vh;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Active Bullet */
 .slider-pagination .swiper-pagination-bullet-active {
-  background: var(--primary-color);
+  background: var(--primary-color);  /* Active bullet color */
 }
 
 .testimonial-pagination .swiper-pagination-bullet {
@@ -672,4 +727,50 @@ iconify-icon.quote {
   color: var(--heading-color);
   background-color: transparent;
   box-shadow: none;
+}
+
+/*--------------------------------------------------------------
+Resource Card
+--------------------------------------------------------------*/
+
+.resource-card {
+  background: rgba(11, 72, 11, 0.1); /* Light green overlay */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card a {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  color: #0b480b;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.resource-card a:hover {
+  color: #0b802b; /* Slightly lighter green */
+  transform: translateX(5px);
+}
+
+#resources {
+  background: url('images/sustainability-bg.jpg') center/cover no-repeat;
+  padding: 80px 0;
+  color: white;
+}
+
+#resources h2 {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resource-card {
+  background: rgba(190, 244, 182, 0.8); /* White overlay */
+}
+
+#resources {
+  background: url('images/texture.png') repeat;
+  background-size: cover;  /* Makes sure it's fully visible */
+  background-position: center;
+  min-height: 100vh;  /* Ensures it takes up space */
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>BioFusion Plastics</title>
@@ -29,6 +29,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
     rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- jQuery (Required for Slick) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+  <!-- Slick JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 </head>
 
 <body>
@@ -265,53 +281,78 @@
   <section id="slider">
     <div class="swiper slider position-relative">
       <div class="swiper-wrapper">
+        <!-- First Slide -->
         <div class="swiper-slide d-flex"
           style="background-image: url(images/slider-image.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
-
           <div class="container m-auto ">
             <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Organic Waste into Biodegrdable Plastic</h2>
+              <h2 class="display-1 fw-bold text-white">Organic Waste into Biodegradable Plastic</h2>
               <p class="text-white">NutriCycle converts organic waste into biodegradable plastics,<br>
                 offering eco-friendly solutions for packaging and consumer goods,<br>
                 and helps industries adopt sustainable practices.</p>
               <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
             </div>
           </div>
-
         </div>
+
+        <!-- Second Slide -->
         <div class="swiper-slide d-flex"
           style="background-image: url(images/slider-image1.png); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
-
           <div class="container m-auto ">
             <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Organic Waste into Biodegrdable Plastic</h2>
-              <p class="text-white">NutriCycle converts organic waste into biodegradable plastics,<br>
-                offering eco-friendly solutions for packaging and consumer goods,<br>
-                and helps industries adopt sustainable practices.</p>
+              <h2 class="display-1 fw-bold text-white">Biodegradable Plastic for a Sustainable Future</h2>
+              <p class="text-white">NutriCycle produces durable yet fully biodegradable plastics,<br>
+                offering an eco-friendly solution for packaging and everyday <br>
+                products. These materials maintain functionality while naturally <br>
+                decomposing, reducing long-term waste buildup.</p>
               <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
             </div>
           </div>
-
         </div>
+
+        <!-- Third Slide -->
         <div class="swiper-slide d-flex"
           style="background-image: url(images/slider-image2.jpg); background-size: cover; background-repeat: no-repeat; height: 90vh; background-position: center;">
-
           <div class="container m-auto ">
             <div class="text-start col-md-10 offset-md-1">
-              <h2 class="display-1 fw-bold text-white">Organic Waste into Biodegrdable Plastic</h2>
-              <p class="text-white">NutriCycle converts organic waste into biodegradable plastics,<br>
-                offering eco-friendly solutions for packaging and consumer goods,<br>
-                and helps industries adopt sustainable practices.</p>
+              <h2 class="display-1 fw-bold text-white">Innovative Machinery for Green Production</h2>
+              <p class="text-white">NutriCycle's advanced machinery efficiently processes organic <br>
+                waste into biodegradable plastics. With cutting-edge technology, <br>
+                these systems ensure sustainable, large-scale production, helping <br>
+                industries reduce their environmental footprint.</p>
               <a href="services-single.html" class="btn btn-primary mt-3">Read More</a>
             </div>
           </div>
-
         </div>
-
       </div>
+
+      <!-- Pagination -->
       <div class="swiper-pagination slider-pagination position-absolute pb-5"></div>
+
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
     </div>
   </section>
+
+  <script>
+    var swiper = new Swiper(".swiper", {
+      loop: true, // Enables infinite looping
+      autoplay: {
+        delay: 5000, // 5-second interval between slides
+        disableOnInteraction: false, // Keeps autoplay even if user interacts
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>  
 
   <section id="info" class="padding-medium">
     <div class="container">
