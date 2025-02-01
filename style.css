@@ -1,12 +1,3 @@
-/*
-Theme Name: Sola - Solar Energy HTML Website Template
-Theme URI: https://templatesjungle.com/
-Author: TemplatesJungle
-Author URI: https://templatesjungle.com/
-Description: Sola is specially designed product packaged for Solar Energy by TemplatesJungle.
-Version: 1.1
-*/
-
 /*--------------------------------------------------------------
 This is main CSS file that contains custom style rules used in this template
 --------------------------------------------------------------*/
@@ -791,6 +782,16 @@ Resource Card
     background-size: cover !important;  
     background-position: center;
   }
+}
+
+/*--------------------------------------------------------------
+Miscellaneous
+--------------------------------------------------------------*/
+
+.isotope-container img {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures images maintain aspect ratio while filling the container */
 }
 
 html {
