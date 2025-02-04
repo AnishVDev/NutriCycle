@@ -149,12 +149,12 @@
             <li class="location text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
               <svg class="text-primary me-1" width="15" height="15">
                 <use xlink:href="#location"></use>
-              </svg>Northern Africa
+              </svg>Western Africa
             </li>
             <li class="phone text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
               <svg class="text-primary me-1" width="15" height="15">
                 <use xlink:href="#phone"></use>
-              </svg>### ### ####
+              </svg>+### ### ####
             </li>
             <li class="time text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
               <svg class="text-primary me-1" width="15" height="15">
@@ -516,12 +516,12 @@
         </div>
       </div>
     </div>
-  </section>  
-
+  </section>
+  
   <section id="testimonial">
     <div class="container">
       <div class="row">
-        <div class="col-md-1 offset-md-1 ">
+        <div class="col-md-1 offset-md-1">
           <div class="me-3">
             <svg class="text-primary me-1" width="60px" height="60px">
               <use xlink:href="#quote"></use>
@@ -534,55 +534,70 @@
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
+                    <p class="fs-3 fst-italic fw-light lh-base">
+                      "At NutriCycle, we believe that every bit of organic waste is an opportunity for innovation and sustainability."
+                    </p>
+                    <h6 class="fw-bold">NutriCycle CEO <span class="fw-normal">| Leadership Team</span></h6>
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
+                    <p class="fs-3 fst-italic fw-light lh-base">
+                      "By converting spoiled maize into biodegradable plastic, we are building a cleaner and greener future."
+                    </p>
+                    <h6 class="fw-bold">Head of Research <span class="fw-normal">| Innovation Team</span></h6>
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
+                    <p class="fs-3 fst-italic fw-light lh-base">
+                      "We are not just reducing waste; we are creating economic opportunities for local farmers."
+                    </p>
+                    <h6 class="fw-bold">Community Outreach Lead <span class="fw-normal">| Sustainability Team</span></h6>
                   </div>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="review">
                   <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="review">
-                  <div class="review-content">
-                    <p class="fs-3 fst-italic fw-light lh-base">At the core of our practice is the idea that cities are
-                      the incubators of our greatest achievements, and the best hope for a sustainable future. </p>
-                    <h6 class="fw-bold">John Geoffrey <span class="fw-normal">| director</span></h6>
+                    <p class="fs-3 fst-italic fw-light lh-base">
+                      "Sustainability isn't a choice; it's a responsibility. NutriCycle is committed to making a lasting impact."
+                    </p>
+                    <h6 class="fw-bold">Environmental Strategist <span class="fw-normal">| Policy & Impact Team</span></h6>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Swiper Pagination (Dots)-->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination text-center mt-3"></div>
+            <div class="swiper-pagination text-center" style="position: relative; margin-top: -10px;"></div>
+            
+            <!-- Swiper Navigation -->
             <div class="swiper-pagination testimonial-pagination text-start position-relative mt-4"></div>
           </div>
         </div>
       </div>
-
+    </div>
   </section>
+
+  <script>
+    var swiper = new Swiper('.testimonial-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000, 
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    });
+  </script>
 
   <section id="blogs" class="padding-medium">
     <div class="container">
@@ -618,8 +633,7 @@
       <div class="d-flex flex-wrap align-items-center justify-content-between">
         <div>
           <h3 class="display-5 fw-bold mb-3">Feel Free to Contact Us</h3>
-          <p>If you have any projects in mind say hello at contact@yourinfo.com or <br> just call us at +111 222 333
-            444.</p>
+          <p>If you have any partnerships in mind say hello at partnerships@nutricycle.com or <br> call us at +### ### ####.</p>
         </div>
         <a href="contact.html" class="btn btn-primary">Contact Us</a>
       </div>
@@ -640,7 +654,7 @@
             <li class="phone text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
                 <use xlink:href="#phone"></use>
-              </svg>### ### ####
+              </svg>+### ### ####
             </li>
             <li class="time text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
