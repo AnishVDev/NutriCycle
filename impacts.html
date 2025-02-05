@@ -46,6 +46,9 @@
 
   <!-- Slick JS -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -279,20 +282,76 @@
     </nav>
   </header>
 
-  <section id="financial-support">
-    <h2>Financial & Investment Support</h2>
-    <p>Details about financial support...</p>
+  <section class="impacts-container">
+    <!-- Title Section -->
+    <div class="impact-header">
+        <h2>Our Environmental & Social Impact</h2>
+        <p>Driving sustainability through innovation and responsible waste management.</p>
+    </div>
+
+    <!-- Impact Description -->
+    <div class="impact-content">
+        <!-- Left Side: Text -->
+        <div class="impact-text">
+            <h3>Transforming Waste into Resources</h3>
+            <p>At <span class="highlight">NutriCycle</span>, we convert organic waste into biodegradable plastics, reducing landfill waste and preventing environmental pollution. Our advanced technology turns waste into sustainable solutions that benefit ecosystems and communities.</p>
+
+            <h3>Eco-Friendly Practices</h3>
+            <p>By adopting the latest <span class="highlight">PLA conversion methods</span>, we efficiently process waste, ensuring minimal environmental impact. We also support farmers by purchasing organic waste, promoting a circular economy.</p>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="impact-image">
+            <img src="images/sustainability.jpg" alt="Sustainability in Action">
+        </div>
+    </div>
+
+    <!-- Key Impact Stats -->
+    <div class="impact-stats">
+        <div class="stat-box">
+            <h4>450M+</h4>
+            <p>tons of plastic waste produced annually - we provide a sustainable solution.</p>
+        </div>
+        <div class="stat-box">
+            <h4>1000+</h4>
+            <p>tons of organic waste repurposed into biodegradable materials.</p>
+        </div>
+        <div class="stat-box">
+            <h4>50%</h4>
+            <p>reduction in landfill waste through our initiatives.</p>
+        </div>
+    </div>
+
+    <!-- Solutions Section -->
+    <div class="solutions-container">
+        <h2>Our Sustainable Solutions</h2>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <h3>Financial Aid & Investment</h3>
+                <p>We collaborate with global partners to fund sustainable projects, ensuring economic growth alongside environmental preservation.</p>
+            </div>
+            <div class="solution-card">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Access to Advanced Technology</h3>
+                <p>Using AI and automation, we enhance waste sorting and recycling, making eco-friendly processes more efficient.</p>
+            </div>
+            <div class="solution-card">
+                <i class="fa-solid fa-recycle"></i>
+                <h3>Eco-Conscious Waste Conversion</h3>
+                <p>We minimize pollution by implementing cutting-edge biodegradable plastic production techniques.</p>
+            </div>
+        </div>
+    </div>
   </section>
-  
-  <section id="technology-access">
-    <h2>Access to Advanced Technology</h2>
-    <p>Details about technology access...</p>
-  </section>
-  
-  <section id="pla-plastic">
-    <h2>PLA Plastic Production</h2>
-    <p>Details about PLA plastic production...</p>
-  </section>  
+
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #e6f7e6, #ffffff);
+    color: #333;
+  }
+  </style>
 
   <section id="footer">
     <div class="container footer-container mt-5 pt-3">
@@ -303,7 +362,7 @@
             <li class="location text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
                 <use xlink:href="#location"></use>
-              </svg>Northern Africa
+              </svg>Western Africa
             </li>
             <li class="phone text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
@@ -369,6 +428,11 @@
           <div class="gallery-container">
             <div class="row g-1 project-gallery">
               <!--Add Pictures-->
+              <div class="col-4">
+                <a href="images/sustainability.jpg" title="NutriCycle" class="image-link">
+                    <img src="images/sustainability.jpg" class="post-image img-fluid">
+                </a>
+              </div>
             </div>
           </div>
         </div>      

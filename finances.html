@@ -46,6 +46,24 @@
 
   <!-- Slick JS -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <style>
+    body { background-color: #f8f8f8; background: linear-gradient(to top, #4d9a52, #549656, #ffffff); color: #333; }
+    h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
+    section { font-family: Arial, sans-serif; margin-bottom: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); margin: 50px; padding: 10; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+    th { background-color: #2c3e50; color: white; }
+    .chart-container { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+    .chart-box { width: 40%; min-width: 250px; }
+    canvas { max-width: 100%; height: auto; }
+  </style>
 </head>
 
 <body>
@@ -279,16 +297,212 @@
     </nav>
   </header>
 
-  <section id="footer">
+  <h1 style="text-align: center; margin-top: 30px; color: #000000;">NutriCycle Financial Overview</h1>
+
+  <!-- Distribution Channels -->
+  <section>
+      <h2>Distribution & Advertisement Channels</h2>
+      <p>NutriCycle markets and distributes its biodegradable plastics through <b>online</b> and <b>offline</b> channels.</p>
+      
+      <h3>Online Channels</h3>
+      <ul>
+          <li><strong>Social Media Ads:</strong> Facebook, Instagram, X, and LinkedIn for targeting eco-conscious businesses.</li>
+          <li><strong>Google Ads:</strong> Reaching companies looking for sustainable materials.</li>
+          <li><strong>Website & SEO:</strong> Organic traffic from sustainability-related searches.</li>
+          <li><strong>Email Marketing:</strong> Direct outreach to packaging, automobile, and healthcare companies.</li>
+      </ul>
+
+      <h3>Offline Channels</h3>
+      <ul>
+          <li><strong>Industry Trade Shows:</strong> Exhibiting our PLA materials at sustainable industry events.</li>
+          <li><strong>B2B Partnerships:</strong> Collaborating with eco-conscious brands.</li>
+          <li><strong>Government Programs:</strong> Working with environmental initiatives that promote biodegradable solutions.</li>
+          <li><strong>Direct Sales Team:</strong> Connecting with businesses through cold calls and in-person meetings.</li>
+      </ul>
+  </section>
+
+  <!-- Revenue Streams -->
+  <section>
+      <h2>Revenue Streams & Industry Breakdown</h2>
+      <p>NutriCycle generates revenue from <b>B2B Sales, NGO Grants, Environmental Donations, and Sponsorships.</b></p>
+
+      <div class="chart-container">
+          <div class="chart-box">
+              <h3>Revenue Streams</h3>
+              <canvas id="revenuePieChart"></canvas>
+          </div>
+          <div class="chart-box">
+              <h3>Revenue by Industry</h3>
+              <canvas id="industryPieChart"></canvas>
+          </div>
+      </div>
+
+      <script>
+          var ctx = document.getElementById('revenuePieChart').getContext('2d');
+          new Chart(ctx, {
+              type: 'pie',
+              data: {
+                  labels: ["B2B Sales", "NGO Grants", "Environmental Donations", "Sponsorships"],
+                  datasets: [{
+                      data: [80, 6, 6, 7],
+                      backgroundColor: ["#3498db", "#2ecc71", "#f1c40f", "#e74c3c"]
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false
+              }
+          });
+
+          var ctx2 = document.getElementById('industryPieChart').getContext('2d');
+          new Chart(ctx2, {
+              type: 'pie',
+              data: {
+                  labels: ["Packaging Companies", "Automobile Companies", "Healthcare Companies", "Consumer Goods"],
+                  datasets: [{
+                      data: [30, 25, 20, 15],
+                      backgroundColor: ["#1abc9c", "#9b59b6", "#e67e22", "#34495e"]
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false
+              }
+          });
+      </script>
+  </section>
+
+  <!-- Financial Projections -->
+  <section>
+    <h2>Financial Projections</h2>
+    <table class="finance-table5">
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Fiscal Year 1</th>
+                <th>Fiscal Year 2</th>
+                <th>Fiscal Year 3</th>
+                <th>Fiscal Year 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td># of Factories Built</td>
+                <td>1</td>
+                <td>3</td>
+                <td>4</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>B2B Sales ($M)</td>
+                <td>$13.69M</td>
+                <td>$41.06M</td>
+                <td>$54.75M</td>
+                <td>$82.13M</td>
+            </tr>
+            <tr>
+                <td>External Support Revenue ($M)</td>
+                <td>$4.72M</td>
+                <td>$8.54M</td>
+                <td>$11.57M</td>
+                <td>$14.30M</td>
+            </tr>
+            <tr>
+                <td>Total Revenue ($M)</td>
+                <td>$18.41M</td>
+                <td>$49.60M</td>
+                <td>$65.32M</td>
+                <td>$96.43M</td>
+            </tr>
+            <tr>
+                <td>Cost of Goods Sold ($M)</td>
+                <td>$6.57M</td>
+                <td>$19.71M</td>
+                <td>$26.28M</td>
+                <td>$39.42M</td>
+            </tr>
+            <tr>
+                <td>Factory Setup Costs ($M)</td>
+                <td>$4.19M</td>
+                <td>$8.38M</td>
+                <td>$4.19M</td>
+                <td>$8.38M</td>
+            </tr>
+            <tr>
+                <td>Miscellaneous Costs ($M)</td>
+                <td>$2.80M</td>
+                <td>$2.80M</td>
+                <td>$2.80M</td>
+                <td>$2.80M</td>
+            </tr>
+            <tr>
+                <td>Gross Profit ($M)</td>
+                <td>$8.83M</td>
+                <td>$26.91M</td>
+                <td>$36.24M</td>
+                <td>$53.71M</td>
+            </tr>
+            <tr>
+                <td>Net Profit ($M)</td>
+                <td>$4.64M</td>
+                <td>$18.53M</td>
+                <td>$32.05M</td>
+                <td>$45.33M</td>
+            </tr>
+            <tr>
+                <td>Gross Profit Margin (%)</td>
+                <td>48.0%</td>
+                <td>54.3%</td>
+                <td>55.5%</td>
+                <td>55.7%</td>
+            </tr>
+        </tbody>
+    </table>
+  </section>  
+
+  <!-- Cost Structure -->
+  <section>
+      <h2>Cost Structure</h2>
+      <p>Breakdown of major costs incurred in the business.</p>
+      
+      <table>
+          <tr>
+              <th>Job Position</th>
+              <th>Annual Salary</th>
+              <th>Role</th>
+          </tr>
+          <tr>
+              <td>Process Engineers</td>
+              <td>$82,000</td>
+              <td>Ensures efficient conversion</td>
+          </tr>
+          <tr>
+              <td>Logistic Manager</td>
+              <td>$90,000</td>
+              <td>Coordinates distribution</td>
+          </tr>
+          <tr>
+              <td>Maintenance Technicians</td>
+              <td>$110,000</td>
+              <td>Maintains and repairs machines</td>
+          </tr>
+          <tr>
+              <td>Marketing Manager</td>
+              <td>$100,000</td>
+              <td>Oversees marketing strategies</td>
+          </tr>
+      </table>
+  </section>
+
     <div class="container footer-container mt-5 pt-3">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+      <footer id="footer" class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
         <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
           <h5 class="py-3">Our Address</h5>
           <ul class="nav flex-column">
             <li class="location text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
                 <use xlink:href="#location"></use>
-              </svg>Northern Africa
+              </svg>Western Africa
             </li>
             <li class="phone text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
@@ -382,7 +596,6 @@
 
       </footer>
     </div>
-  </section>
   
   <script src="js/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>

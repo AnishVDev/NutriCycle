@@ -343,6 +343,22 @@ h6 {
   --bs-gradient: none;
 }
 
+.filter-button {
+  font-family: inherit; /* Matches the body font */
+  background: none; /* Removes background color */
+  border: none; /* Removes outline */
+  color: inherit; /* Matches the body's text color */
+  padding: 8px 16px; 
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-button:hover, 
+.filter-button.active {
+  background: #27bd2a; /* Example: Change to your preferred color */
+  color: #fff; /* White text when active/hovered */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
 
 
 /*--------------------------------------------------------------
@@ -587,13 +603,89 @@ section#slider .main-slider-button-next.swiper-button-disabled,
 
 /* 4.3 About Section
 /*----------------------------------------------*/
-svg.play-icon {
-  animation: play 1.5s alternate infinite ease-in;
+/* General Styling */
+.about-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
-.about-section {
-  padding: 50px 0;
+/* Flexbox for Text + Image */
+.about-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dfe8df;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Text Box Styling */
+.text-box {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.text-box h2 {
+  color: #006400;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Image Box Styling */
+.image-box {
+  flex: 1;
+  text-align: right;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Info Boxes */
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info-box {
+  flex: 1;
+  background-color: #dfe8df;
+  color: #dfe8df;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo1 {
+  position: absolute;
+  top: 210px;
+  right: 800px;
+  width: 150px; /* Adjust size */
+  height: auto;
+}
+
+.info-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.info-box p {
+  font-size: 1.1rem;
+}
+
 
 .container {
   width: 80%;
@@ -644,32 +736,225 @@ p {
 }
 
 
-/* 4.4 Services Section
-/*----------------------------------------------*/
-.service-post img.service-img {
-  transition: all 0.5s ease-in-out;
-}
-
-.service-post:hover img.service-img {
-  opacity: 0.2;
-}
-
-
-/* 4.5 Projects Section
+/* 4.4 Impacts Section
 /*----------------------------------------------*/
 
-button.filter-button {
-  border: 0;
-  background: transparent;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in-out;
-  border-radius: 20px;
+/* General Styling */
+.impacts-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
 }
 
-button.filter-button.active,
-button.filter-button:hover {
-  color: var(--bs-light);
-  background: var(--primary-color);
+/* Header */
+.impact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.impact-header h2 {
+  font-size: 2.5rem;
+  color: #006400;
+}
+
+.impact-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Impact Content - Flex Layout */
+.impact-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.impact-text {
+  flex: 1;
+}
+
+.impact-text h3 {
+  color: #004d00;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.impact-text p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #008000;
+  font-weight: bold;
+}
+
+.impact-image {
+  flex: 1;
+  text-align: right;
+}
+
+.impact-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Impact Stats */
+.impact-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.stat-box {
+  background: #c6dec6;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box h4 {
+  font-size: 2rem;
+}
+
+.stat-box p {
+  font-size: 1rem;
+}
+
+/* Solutions Section */
+.solutions-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.solutions-container h2 {
+  font-size: 2rem;
+  color: #004d00;
+  margin-bottom: 20px;
+}
+
+.solutions-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.solution-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.solution-card i {
+  font-size: 2rem;
+  color: #008000;
+  margin-bottom: 10px;
+}
+
+.solution-card h3 {
+  font-size: 1.3rem;
+  color: #004d00;
+  margin-bottom: 10px;
+}
+
+.solution-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 4.5 Finances Section
+/*----------------------------------------------*/
+
+.finance-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #FFFFFF
+}
+
+h2 {
+  color: #1b5e20;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-box {
+  background: #e8f5e9;
+  padding: 20px;
+  width: 45%;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #388e3c;
+  color: white;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Small space between the two pie charts */
+  height: 340px; /* Reduce vertical spacing */
+}
+
+.chart-box {
+  width: 40%; /* Keep the charts smaller */
+  min-width: 250px;
+  height: 250px; /* Set a smaller fixed height */
+}
+
+.bar-charts {
+  display: flex;
+  justify-content: space-around;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /*----------------------------------------------*/
@@ -820,7 +1105,8 @@ Resource Card
 }
 
 #resources {
-  background: url('images/texture.png') repeat;
+  background: linear-gradient(to bottom, #e8f2e8, #91cd93); /* Dark Green to Light Green */
+  color: #333; /* Ensures text remains readable */
   background-size: cover;  /* Makes sure it's fully visible */
   background-position: center;
   min-height: 100vh;  /* Ensures it takes up space */

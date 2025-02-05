@@ -46,6 +46,9 @@
 
   <!-- Slick JS -->
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -279,28 +282,33 @@
     </nav>
   </header>
 
-  <section class="about-section">
-    <div class="container">
-        <!-- Company Overview Box -->
-        <div class="overview-box">
-            <h2>Company Overview</h2>
-            <p>NutriCycle is an eco-innovation company dedicated to transforming organic waste into biodegradable plastics, tackling both plastic pollution and organic waste challenges. By partnering with businesses across industries, we supply eco-friendly materials for packaging, consumer goods, and more, promoting a shift toward sustainability. Our mission is to create a sustainable future by offering industries eco-friendly alternatives while promoting environmental awareness.</p>
+  <section class="about-container">
+    <div class="about-top">
+        <!-- Text Box on the Left -->
+        <div class="text-box">
+          <img src="images/logo.png" class="logo1" alt="NutriCycle Logo">
+          <h2>About NutriCycle</h2>
+          <p>NutriCycle is committed to sustainability by transforming organic waste into biodegradable plastics. We aim to reduce plastic pollution while providing eco-friendly alternatives to industries. Our mission is to reshape how waste is utilized for a greener planet.</p>          </p>
         </div>
-
-        <!-- Planet Impact Box -->
-        <div class="planet-impact-box">
-            <h3>Our Planet and Its Impact</h3>
-            <p>Our planet is often taken for granted. People think that littering one piece of garbage will not have an effect, but one person's actions cause a chain reaction, and everyone litters garbage. This not only affects our cities but also our oceans and our air. Yearly plastic production has increased from just 2 million tons in 1950 to 450 million. Plastic is a very important part of our lives, but if the plastic is not recycled, incinerated, or kept in sealed landfills, it can become a pollutant. One to two million tons of plastic is released into the ocean per year. So back to the person thinking littering one piece of garbage won’t have an effect—it has more of an effect than you think.</p>
+        <!-- Image on the Right -->
+        <div class="image-box">
+            <img src="images/eco-friendly.jpg" alt="Eco-Friendly Innovation">
         </div>
+    </div>
 
-        <!-- Commitment to Sustainability Box -->
-        <div class="commitment-box">
-            <h3>Our Commitment to Sustainability</h3>
-            <p>NutriCycle is an eco-friendly company. We convert organic waste into high-quality biodegradable plastics. We are based in Nigeria, and we value our environmental impact above all. We aim to make a significant change in reducing plastic waste while contributing positively to the environment.</p>
-            <img src="images/eco-friendly.jpg" alt="Eco-friendly materials" class="about-image">
+    <!-- Additional Information Below -->
+    <div class="info-boxes">
+        <div class="info-box">
+            <h3>Environmental Impact</h3>
+            <p>Plastic waste has risen drastically, with over 450 million tons produced annually. We provide a solution by converting waste into sustainable alternatives.</p>
+        </div>
+        <div class="info-box">
+            <h3>Our Commitment</h3>
+            <p>Based in Nigeria, we prioritize eco-friendly production and global partnerships to make sustainable packaging and products widely available.</p>
         </div>
     </div>
   </section>
+
 
   <section id="footer">
     <div class="container footer-container mt-5 pt-3">
@@ -311,7 +319,7 @@
             <li class="location text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
                 <use xlink:href="#location"></use>
-              </svg>Northern Africa
+              </svg>Western Africa
             </li>
             <li class="phone text-capitalize d-flex align-items-center">
               <svg class="text-primary me-1" width="16" height="16">
@@ -377,6 +385,11 @@
           <div class="gallery-container">
             <div class="row g-1 project-gallery">
               <!--Add Pictures-->
+              <div class="col-4">
+                <a href="images/eco-friendly.jpg" title="NutriCycle" class="image-link">
+                    <img src="images/eco-friendly.jpg" class="post-image img-fluid">
+                </a>
+            </div>
             </div>
           </div>
         </div>      
