@@ -1163,3 +1163,47 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* General Mobile Fixes */
+@media only screen and (max-width: 768px) {
+  .about-image {
+      max-width: 90%; /* Make image take up more space */
+  }
+
+  .about-heading {
+      font-size: 24px; /* Prevents overlap */
+      text-align: center;
+  }
+
+  .about-box {
+      flex-direction: column; /* Stack elements */
+      text-align: center;
+  }
+
+  /* Fix impact images */
+  .impact-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .impact-image {
+      max-width: 100%;
+      height: auto;
+  }
+
+  /* Fix financial pie charts */
+  .pie-chart-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .pie-chart {
+      max-width: 80%; /* Smaller on mobile */
+  }
+
+  /* Fix finance tables */
+  .finance-table {
+      max-width: 100%;
+      overflow-x: auto; /* Allows scrolling if too wide */
+  }
+}
