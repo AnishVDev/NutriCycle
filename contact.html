@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="author" content="AnishVDev">
   <meta name="keywords" content="">
-  <meta name="description" content="Oragnic Waste into Biodegradable PLastic">
+  <meta name="description" content="Oragnic Waste into Biodegradable Plastic">
   <link rel="icon" href="images/icon.png" type="image/x-icon">
   <!--Bootstrap ================================================== -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -282,6 +282,149 @@
     </nav>
   </header>
   
+  <section>
+    <div class="contact-container">
+      <h2>Contact NutriCycle</h2>
+      <p>Have questions or want to work with us? Fill out the form below!</p>
+
+      <form action="thank-you.html" method="GET">  
+          <label for="first-name">First Name <span class="required">*</span></label>
+          <input type="text" id="first-name" name="first-name" required>
+
+          <label for="last-name">Last Name <span class="required">*</span></label>
+          <input type="text" id="last-name" name="last-name" required>
+
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="company">Company/Organization</label>
+          <input type="text" id="company" name="company">
+
+          <label for="reason">Reason for Contact <span class="required">*</span></label>
+          <select id="reason" name="reason" required>
+              <option value="" disabled selected>Select a reason</option>
+              <option value="partnership">Partnership Inquiry</option>
+              <option value="donation">Donation Opportunities</option>
+              <option value="customer-support">Customer Support</option>
+              <option value="investment">Investment Opportunities</option>
+              <option value="collaboration">Research Collaboration</option>
+              <option value="career">Job or Internship Inquiry</option>
+              <option value="other">Other (Please specify below)</option>
+          </select>
+
+          <label for="other-reason">If Other, Please Specify</label>
+          <input type="text" id="other-reason" name="other-reason">
+
+          <label for="contact-method">Preferred Contact Method <span class="required">*</span></label>
+          <select id="contact-method" name="contact-method" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="partnership">Phone</option>
+              <option value="donation">Email</option>
+              <option value="customer-support">Text</option>
+          </select>
+          
+          <label for="hear">How did you hear about us?<span class="required">*</span></label>
+          <select id="hear" name="hear" required onchange="toggleOtherInput()">
+              <option value="" disabled selected>Select an option</option>
+              <option value="social_media">Social Media (Instagram, Twitter, LinkedIn, etc.)</option>
+              <option value="search_engine">Search Engine (Google, Bing, etc.)</option>
+              <option value="word_of_mouth">Word of Mouth</option>
+              <option value="event">Attended an Event</option>
+              <option value="news_article">News Article / Blog</option>
+              <option value="partnership">Through a Business Partnership</option>
+              <option value="advertisement">Advertisement</option>
+              <option value="other">Other</option>
+          </select>
+
+          <label for="other-hear">If Other, Please Specify</label>
+          <input type="text" id="other-hear" name="other-hear">
+
+          <label for="message">Your Message <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <style>
+    body {
+      background-color: #f4f9f1; /* Light Green Background */
+      color: #333;
+      margin: 0;
+    }
+
+    .contact-container {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px auto;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #2d7a3e; /* NutriCycle Green */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .required {
+      color: red;
+    }
+
+    .submit-btn {
+      background-color: #2d7a3e; /* NutriCycle Green */
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+
+    .submit-btn:hover {
+      background-color: #245f30;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background: #2d7a3e;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .back-btn:hover {
+      background: #245f30;
+    }
+  </style>
+
   <section id="footer">
     <div class="container footer-container mt-5 pt-3">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">

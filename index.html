@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="author" content="AnishVDev">
   <meta name="keywords" content="">
-  <meta name="description" content="Converting Oragnic Waste into Biodegradable PLastic">
+  <meta name="description" content="Converting Oragnic Waste into Biodegradable Plastic">
   <link rel="icon" href="images/icon.png" type="image/x-icon">
   <!--Bootstrap ================================================== -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -611,7 +611,13 @@
                 <h3 class="display-5 fw-bold mb-3">Explore the Future of Sustainable Living</h3>
                 <p class="text-muted">Stay updated with our latest breakthroughs, eco-friendly solutions, and community impact stories.</p>
             </div>
-            <a class="btn btn-primary">Discover More</a>
+            <button class="btn btn-primary" onclick="scrollToBottom()">Discover More</button>
+            <div style="height: 100px;"></div>
+            <script>
+              function scrollToBottom() {
+                  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+              }
+            </script>
         </div>
         <div class="row mt-5 mt-lg-0">
             <div class="col-md-4 mb-4">
