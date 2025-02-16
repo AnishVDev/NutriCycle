@@ -287,65 +287,71 @@
       <h2>Contact NutriCycle</h2>
       <p>Have questions or want to work with us? Fill out the form below!</p>
 
-      <form action="thank-you.html" method="GET">  
-          <label for="first-name">First Name <span class="required">*</span></label>
-          <input type="text" id="first-name" name="first-name" required>
+      <form action="thank-you.html" method="GET">
+        <div class="name">
+          <div class="input-group">
+            <label for="first-name">First Name <span class="required">*</span></label>
+            <input type="text" id="first-name" name="first-name" required>
+          </div>
+        
+          <div class="input-group">
+            <label for="last-name">Last Name <span class="required">*</span></label>
+            <input type="text" id="last-name" name="last-name" required>
+          </div>
+        </div>        
 
-          <label for="last-name">Last Name <span class="required">*</span></label>
-          <input type="text" id="last-name" name="last-name" required>
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required>
 
-          <label for="phone">Phone Number <span class="required">*</span></label>
-          <input type="tel" id="phone" name="phone" required>
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
 
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="email" required>
+        <label for="company">Company/Organization</label>
+        <input type="text" id="company" name="company">
 
-          <label for="company">Company/Organization</label>
-          <input type="text" id="company" name="company">
+        <label for="reason">Reason for Contact <span class="required">*</span></label>
+        <select id="reason" name="reason" required>
+          <option value="" disabled selected>Select a reason</option>
+          <option value="partnership">Partnership Inquiry</option>
+          <option value="donation">Donation Opportunities</option>
+          <option value="customer-support">Customer Support</option>
+          <option value="investment">Investment Opportunities</option>
+          <option value="collaboration">Research Collaboration</option>
+          <option value="career">Job or Internship Inquiry</option>
+          <option value="other">Other (Please specify below)</option>
+        </select>
 
-          <label for="reason">Reason for Contact <span class="required">*</span></label>
-          <select id="reason" name="reason" required>
-              <option value="" disabled selected>Select a reason</option>
-              <option value="partnership">Partnership Inquiry</option>
-              <option value="donation">Donation Opportunities</option>
-              <option value="customer-support">Customer Support</option>
-              <option value="investment">Investment Opportunities</option>
-              <option value="collaboration">Research Collaboration</option>
-              <option value="career">Job or Internship Inquiry</option>
-              <option value="other">Other (Please specify below)</option>
-          </select>
+        <label for="other-reason">If Other, Please Specify</label>
+        <input type="text" id="other-reason" name="other-reason">
 
-          <label for="other-reason">If Other, Please Specify</label>
-          <input type="text" id="other-reason" name="other-reason">
+        <label for="contact-method">Preferred Contact Method <span class="required">*</span></label>
+        <select id="contact-method" name="contact-method" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="partnership">Phone</option>
+            <option value="donation">Email</option>
+            <option value="customer-support">Text</option>
+        </select>
+        
+        <label for="hear">How did you hear about us?<span class="required">*</span></label>
+        <select id="hear" name="hear" required onchange="toggleOtherInput()">
+            <option value="" disabled selected>Select an option</option>
+            <option value="social_media">Social Media (Instagram, Twitter, LinkedIn, etc.)</option>
+            <option value="search_engine">Search Engine (Google, Bing, etc.)</option>
+            <option value="word_of_mouth">Word of Mouth</option>
+            <option value="event">Attended an Event</option>
+            <option value="news_article">News Article / Blog</option>
+            <option value="partnership">Through a Business Partnership</option>
+            <option value="advertisement">Advertisement</option>
+            <option value="other">Other</option>
+        </select>
 
-          <label for="contact-method">Preferred Contact Method <span class="required">*</span></label>
-          <select id="contact-method" name="contact-method" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="partnership">Phone</option>
-              <option value="donation">Email</option>
-              <option value="customer-support">Text</option>
-          </select>
-          
-          <label for="hear">How did you hear about us?<span class="required">*</span></label>
-          <select id="hear" name="hear" required onchange="toggleOtherInput()">
-              <option value="" disabled selected>Select an option</option>
-              <option value="social_media">Social Media (Instagram, Twitter, LinkedIn, etc.)</option>
-              <option value="search_engine">Search Engine (Google, Bing, etc.)</option>
-              <option value="word_of_mouth">Word of Mouth</option>
-              <option value="event">Attended an Event</option>
-              <option value="news_article">News Article / Blog</option>
-              <option value="partnership">Through a Business Partnership</option>
-              <option value="advertisement">Advertisement</option>
-              <option value="other">Other</option>
-          </select>
+        <label for="other-hear">If Other, Please Specify</label>
+        <input type="text" id="other-hear" name="other-hear">
 
-          <label for="other-hear">If Other, Please Specify</label>
-          <input type="text" id="other-hear" name="other-hear">
+        <label for="message">Your Message <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-          <label for="message">Your Message <span class="required">*</span></label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
   </section>
@@ -393,6 +399,18 @@
 
     .required {
       color: red;
+    }
+
+    .name {
+    display: flex;
+    justify-content: space-between; /* Space evenly between two fields */
+    gap: 20px; /* Adjust spacing between input groups */
+    margin-top: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column; /* Stack label above input */
     }
 
     .submit-btn {

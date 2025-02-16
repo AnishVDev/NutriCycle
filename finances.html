@@ -54,7 +54,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
   <style>
-    body { background-color: #f8f8f8; background: linear-gradient(to top, #4d9a52, #549656, #ffffff); color: #333; }
+    body { background-color: #f8f8f8; background: linear-gradient(to top, #7edb84, #ffffff); color: #333; }
     h2 { color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 5px; }
     section { font-family: Arial, sans-serif; margin-bottom: 40px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); margin: 50px; padding: 10; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -344,7 +344,7 @@
               data: {
                   labels: ["B2B Sales", "NGO Grants", "Environmental Donations", "Sponsorships"],
                   datasets: [{
-                      data: [80, 6, 6, 7],
+                      data: [80.4, 6.2, 6.2, 7.3],
                       backgroundColor: ["#3498db", "#2ecc71", "#f1c40f", "#e74c3c"]
                   }]
               },
@@ -462,36 +462,125 @@
 
   <!-- Cost Structure -->
   <section>
-      <h2>Cost Structure</h2>
-      <p>Breakdown of major costs incurred in the business.</p>
-      
-      <table>
+    <h2>Cost Structure</h2>
+    <p>Breakdown of major costs incurred in the business.</p>
+
+    <h3 style="margin-bottom: 0px; margin-top: 15px;">Start-Up Costs</h3>
+      <strong>Total Start-Up Cost: $4,187,000</strong>
+    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+      <thead>
           <tr>
-              <th>Job Position</th>
-              <th>Annual Salary</th>
-              <th>Role</th>
+              <th style="padding: 10px;">Start-Up Costs</th>
+              <th style="padding: 10px;">Dollars ($)</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 10px;">Factory Setup</td>
+              <td style="padding: 10px;">700,000</td>
           </tr>
           <tr>
-              <td>Process Engineers</td>
-              <td>$82,000</td>
-              <td>Ensures efficient conversion</td>
+              <td style="padding: 10px;">Machinery/Equipment</td>
+              <td style="padding: 10px;">2,500,000</td>
           </tr>
           <tr>
-              <td>Logistic Manager</td>
-              <td>$90,000</td>
-              <td>Coordinates distribution</td>
+              <td style="padding: 10px;">Hiring/Training</td>
+              <td style="padding: 10px;">507,000</td>
           </tr>
           <tr>
-              <td>Maintenance Technicians</td>
-              <td>$110,000</td>
-              <td>Maintains and repairs machines</td>
+              <td style="padding: 10px;">Garbage Trucks</td>
+              <td style="padding: 10px;">480,000</td>
           </tr>
-          <tr>
-              <td>Marketing Manager</td>
-              <td>$100,000</td>
-              <td>Oversees marketing strategies</td>
-          </tr>
-      </table>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom: 0px; margin-top: 15px;">Annual Recuring Costs</h3>
+    <table>
+      <tr>
+        <th style="padding: 10px;">Year</th>
+        <th style="padding: 10px;">Maintenance</th>
+        <th style="padding: 10px;">Worker Salaries</th>
+        <th style="padding: 10px;">Distribution</th>
+        <th style="padding: 10px;">Marketing</th>
+        <th style="padding: 10px;">Electricity</th>
+        <th style="padding: 10px;">Factory Costs</th>
+        <th style="padding: 10px;">Material Costs</th>
+        <th style="padding: 10px;"><strong>Total Costs</strong></th>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Year 1</td>
+        <td style="padding: 10px;">130,000</td>
+        <td style="padding: 10px;">500,000</td>
+        <td style="padding: 10px;">2,080,000</td>
+        <td style="padding: 10px;">120,000</td>
+        <td style="padding: 10px;">400,000</td>
+        <td style="padding: 10px;">7,000</td>
+        <td style="padding: 10px;">5,760,000</td>
+        <td style="padding: 10px; font-weight: bold;">8,997,000</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Year 2</td>
+        <td style="padding: 10px;">240,000</td>
+        <td style="padding: 10px;">700,000</td>
+        <td style="padding: 10px;">3,450,000</td>
+        <td style="padding: 10px;">150,000</td>
+        <td style="padding: 10px;">700,000</td>
+        <td style="padding: 10px;">2,000,000</td>
+        <td style="padding: 10px;">19,162,000</td>
+        <td style="padding: 10px; font-weight: bold;">26,402,000</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Year 3</td>
+        <td style="padding: 10px;">450,000</td>
+        <td style="padding: 10px;">1,200,000</td>
+        <td style="padding: 10px;">4,500,000</td>
+        <td style="padding: 10px;">130,000</td>
+        <td style="padding: 10px;">1,100,000</td>
+        <td style="padding: 10px;">1,000,000</td>
+        <td style="padding: 10px;">25,550,000</td>
+        <td style="padding: 10px; font-weight: bold;">33,930,000</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Year 4</td>
+        <td style="padding: 10px;">460,000</td>
+        <td style="padding: 10px;">1,200,000</td>
+        <td style="padding: 10px;">5,000,000</td>
+        <td style="padding: 10px;">90,000</td>
+        <td style="padding: 10px;">1,100,000</td>
+        <td style="padding: 10px;">2,000,000</td>
+        <td style="padding: 10px;">39,000,000</td>
+        <td style="padding: 10px; font-weight: bold;">48,850,000</td>
+      </tr>
+    </table>
+
+    <h3 style="margin-bottom: 0px; margin-top: 15px;">HR Costs</h3>
+    <table>
+      <tr>
+          <th>Job Position</th>
+          <th>Annual Salary</th>
+          <th>Role</th>
+      </tr>
+      <tr>
+          <td>Process Engineers</td>
+          <td>$82,000</td>
+          <td>Ensures efficient conversion</td>
+      </tr>
+      <tr>
+          <td>Logistic Manager</td>
+          <td>$90,000</td>
+          <td>Coordinates distribution</td>
+      </tr>
+      <tr>
+          <td>Maintenance Technicians</td>
+          <td>$110,000</td>
+          <td>Maintains and repairs machines</td>
+      </tr>
+      <tr>
+          <td>Marketing Manager</td>
+          <td>$100,000</td>
+          <td>Oversees marketing strategies</td>
+      </tr>
+    </table>
   </section>
 
     <div class="container footer-container mt-5 pt-3">

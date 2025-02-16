@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Checkout | NutriCycle</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="AnishVDev">
+  <meta name="keywords" content="">
+  <meta name="description" content="Oragnic Waste into Biodegradable Plastic">
+  <link rel="icon" href="images/icon.png" type="image/x-icon">
+  <!--Bootstrap ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+  <!--vendor css ================================================== -->
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+  <!--Link Swiper's CSS ================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Style Sheet ================================================== -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- Google Fonts ================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- jQuery (Required for Slick) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+  <!-- Slick JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Paypal
+  <script src="https://www.paypal.com/sdk/js?client-id=PAYPAL_CLIENT_ID"></script>
+  -->
+
+  <style>
+    .body1 {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    }
+
+    .header1 {
+        background: #2d6a4f;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .back-btn {
+        background: white;
+        color: #2d6a4f;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .back-btn:hover {
+        background: #52b788;
+        color: white;
+    }
+
+    .checkout-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .cart-summary, .shipping-info {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 40%;
+    }
+
+    h2 {
+        color: #2d6a4f;
+        border-bottom: 2px solid #52b788;
+        padding-bottom: 5px;
+    }
+
+    .cart-item {
+        padding: 10px 0;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .payment-options {
+    display: flex;
+    gap: 10px;
+    }
+
+    .payment-options label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    }
+
+    .payment-options input[type="radio"] {
+    margin-right: 8px; /* Space between the radio button and text */
+    transform: scale(1.2); /* Slightly enlarge for better visibility */
+    }
+
+    .checkout-btn {
+        background: #2d6a4f;
+        color: white;
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .checkout-btn:hover {
+        background: #52b788;
+    }
+
+    @media (max-width: 768px) {
+        .checkout-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .cart-summary, .shipping-info {
+            width: 80%;
+        }
+    }
+  </style>
+</head>
+
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol xmlns="http://www.w3.org/2000/svg" id="send" viewBox="0 0 24 24">
+      <g fill="none">
+        <path
+          d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+        <path fill="currentColor"
+          d="m21.433 4.861l-6 15.5a1 1 0 0 1-1.624.362l-3.382-3.235l-2.074 2.073a.5.5 0 0 1-.853-.354v-4.519L2.309 9.723a1 1 0 0 1 .442-1.691l17.5-4.5a1 1 0 0 1 1.181 1.329ZM19 6.001L8.032 13.152l1.735 1.66L19 6Z" />
+      </g>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="quote" viewBox="0 0 16 16">
+      <path fill="currentColor"
+        d="M7 7v7H0V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9C2.3 6 3.1 7 3.1 7zm9 0v7H9V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9c-.4 1.2.4 2.2.4 2.2z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="play" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z" />
+      <path fill="currentColor"
+        d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5a9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="navbar-icon" viewBox="0 0 16 16">
+      <path
+        d="M14 10.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0 0 1h7a.5.5 0 0 0 .5-.5zm0-3a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0 0 1h11a.5.5 0 0 0 .5-.5z" />
+    </symbol>
+
+    <symbol xmlns="http://www.w3.org/2000/svg" id="location" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="phone" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="m16.556 12.906l-.455.453s-1.083 1.076-4.038-1.862s-1.872-4.014-1.872-4.014l.286-.286c.707-.702.774-1.83.157-2.654L9.374 2.86C8.61 1.84 7.135 1.705 6.26 2.575l-1.57 1.56c-.433.432-.723.99-.688 1.61c.09 1.587.808 5 4.812 8.982c4.247 4.222 8.232 4.39 9.861 4.238c.516-.048.964-.31 1.325-.67l1.42-1.412c.96-.953.69-2.588-.538-3.255l-1.91-1.039c-.806-.437-1.787-.309-2.417.317" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="chevron-back-circle" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208s208-93.13 208-208S370.87 48 256 48m35.31 292.69a16 16 0 1 1-22.62 22.62l-96-96a16 16 0 0 1 0-22.62l96-96a16 16 0 0 1 22.62 22.62L206.63 256Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="chevron-forward-circle" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M48 256c0 114.87 93.13 208 208 208s208-93.13 208-208S370.87 48 256 48S48 141.13 48 256m257.37 0l-84.68-84.69a16 16 0 0 1 22.62-22.62l96 96a16 16 0 0 1 0 22.62l-96 96a16 16 0 0 1-22.62-22.62Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="email" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="clock" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.2 14.2L11 13V7h1.5v5.2l4.5 2.7z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="star" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M394 480a16 16 0 0 1-9.39-3L256 383.76L127.39 477a16 16 0 0 1-24.55-18.08L153 310.35L23 221.2a16 16 0 0 1 9-29.2h160.38l48.4-148.95a16 16 0 0 1 30.44 0l48.4 149H480a16 16 0 0 1 9.05 29.2L359 310.35l50.13 148.53A16 16 0 0 1 394 480" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="play-circle" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="m9.5 16.5l7-4.5l-7-4.5zM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20m0-8" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="facebook" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="youtube" viewBox="0 0 32 32">
+      <path fill="currentColor"
+        d="M29.41 9.26a3.5 3.5 0 0 0-2.47-2.47C24.76 6.2 16 6.2 16 6.2s-8.76 0-10.94.59a3.5 3.5 0 0 0-2.47 2.47A36.13 36.13 0 0 0 2 16a36.13 36.13 0 0 0 .59 6.74a3.5 3.5 0 0 0 2.47 2.47c2.18.59 10.94.59 10.94.59s8.76 0 10.94-.59a3.5 3.5 0 0 0 2.47-2.47A36.13 36.13 0 0 0 30 16a36.13 36.13 0 0 0-.59-6.74ZM13.2 20.2v-8.4l7.27 4.2Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 256 256">
+      <path fill="currentColor"
+        d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="twitter" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="linkedin" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32Zm-273.3 373.43h-64.18V205.88h64.18ZM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43c0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43Zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44c-17.74 0-28.24 12-32.91 23.69c-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44c42.13 0 74 27.77 74 87.64Z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0 0 34.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 0 0 327.3 362.6l94.09 94.09a25 25 0 0 0 35.3-35.3M97.92 222.72a124.8 124.8 0 1 1 124.8 124.8a124.95 124.95 0 0 1-124.8-124.8" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="arrow-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="plus" viewBox="0 0 16 16">
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" id="minus" viewBox="0 0 16 16">
+      <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+    </symbol>
+  </svg>
+
+  <header id="header">
+    <nav class="header-top bg-dark py-1">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <ul class="info d-flex flex-wrap list-unstyled m-0">
+            <li class="location text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
+              <svg class="text-primary me-1" width="15" height="15">
+                <use xlink:href="#location"></use>
+              </svg>Western Africa
+            </li>
+            <li class="phone text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
+              <svg class="text-primary me-1" width="15" height="15">
+                <use xlink:href="#phone"></use>
+              </svg>+### ### ####
+            </li>
+            <li class="time text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
+              <svg class="text-primary me-1" width="15" height="15">
+                <use xlink:href="#clock"></use>
+              </svg>24/7, Monday-Sunday
+            </li>
+          </ul>
+          <ul class="social-links d-flex flex-wrap list-unstyled m-0">
+            <li class="social">
+              <a href="https://github.com/AnishVDev/NutriCycle" target="_blank" class="social-link">
+                  <img src="images\github.png" alt="GitHub" width="18" height="18" class="me-1">
+                  <li class="phone text-white text-capitalize d-flex align-items-center me-4" style="font-size: 12px;">
+                    View on Github
+                  </li>
+              </a>
+            </li>
+          <!--
+            <li class="social ms-4">
+              <a href="#">
+                <svg class="me-1" width="16" height="16">
+                  <use xlink:href=></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social ms-4">
+              <a href="#">
+                <svg class="me-1" width="16" height="16">
+                  <use xlink:href=></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social ms-4">
+              <a href="#">
+                <svg class="me-1" width="16" height="16">
+                  <use xlink:href=></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social ms-4">
+              <a href="#">
+                <svg class="me-1" width="16" height="16">
+                  <use xlink:href=""></use>
+                </svg>
+              </a>
+            </li>
+          -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav id="primary-header" class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/main-logo.png" class="logo img-fluid">
+        </a>
+        <button class="navbar-toggler border-0 d-flex d-lg-none order-3 p-2 shadow-none" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false">
+          <svg class="navbar-icon" width="60" height="60">
+            <use xlink:href="#navbar-icon"></use>
+          </svg>
+        </button>
+        <div class="header-bottom offcanvas offcanvas-end" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
+          <div class="offcanvas-header px-4 pb-0">
+            <button type="button" class="btn-close btn-close-black mt-2" data-bs-dismiss="offcanvas" aria-label="Close"
+              data-bs-target="#bdNavbar"></button>
+          </div>
+          <div class="offcanvas-body align-items-center justify-content-end">
+            <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="index.html">Home</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="about.html">About</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="impacts.html">Impacts</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="finances.html">Finances</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" aria-current="page" href="usp.html">USP</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link p-0" href="bibliography.html">Bibliography</a>
+              </li>
+            <!--
+              <li class="nav-item px-3 dropdown">
+                <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
+                  <li class="py-1"><a href="about.html" class="dropdown-item text-uppercase ">About
+                  <li class="py-1"><a href="blog.html" class="dropdown-item text-uppercase ">Blog
+                  <li class="py-1"><a href="blog-single.html" class="dropdown-item text-uppercase ">Blog-Single
+                  <li class="py-1"><a href="quote.html" class="dropdown-item text-uppercase ">quote
+                  <li class="py-1"><a href="services.html" class="dropdown-item text-uppercase ">Services
+                  <li class="py-1"><a href="services-single.html" class="dropdown-item text-uppercase ">Service-Single
+                  <li class="py-1"><a href="project.html" class="dropdown-item text-uppercase ">Project
+                  <li class="py-1"><a href="project-single.html" class="dropdown-item text-uppercase ">Project-Single
+                  <li class="py-1"><a href="pricing.html" class="dropdown-item text-uppercase ">Pricing
+                  <li class="py-1"><a href="contact.html" class="dropdown-item text-uppercase ">Contact
+                  <li class="py-1"><a href="team.html" class="dropdown-item text-uppercase ">Our Team
+                  <li class="py-1"><a href="review.html" class="dropdown-item text-uppercase ">Reviews
+                  <li class="py-1"><a href="faq.html" class="dropdown-item text-uppercase ">FAQs
+                </ul>
+              </li>
+            -->  
+
+              <li class="nav-item ps-3 mt-4 mt-lg-0">
+                <a href="cart.html" class="btn btn-outline-primary py-2 px-4"><img src="images/cart.png"></a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="body1">
+    <div class="header1">
+        <div class="logo"><img src="images/icon.png" width="40"> NutriCycle</div>
+        <button class="back-btn" onclick="window.location.href='cart.html'">← Back to Shop</button>
+    </div>
+
+    <main>
+        <div class="checkout-container">
+            <!-- Cart Summary -->
+            <section class="cart-summary">
+                <h2>Your Cart</h2>
+                <div id="cartItems"></div>
+                <h3>Total: $<span id="totalAmount">0.00</span></h3>
+            </section>
+
+            <!-- Shipping Information -->
+            <section class="shipping-info">
+                <h2>Shipping Details</h2>
+                <form id="checkoutForm">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <textarea id="address" placeholder="Shipping Address" required></textarea>
+                    
+                    <h2>Payment Method</h2>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="card" checked> Credit/Debit Card</label>
+                        <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                    </div>
+
+                    <div id="cardSection">
+                        <input type="text" id="cardNumber" placeholder="Card Number" required>
+                        <input type="month" id="expiry" required>
+                        <input type="text" id="cvv" placeholder="CVV" required>
+                    </div>
+
+                    <div id="paypalButton" style="display: none;"></div>
+
+                    <button type="submit" class="checkout-btn">Place Order</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || {};
+            let cartItems = document.getElementById("cartItems");
+            let totalAmount = 0;
+
+            cartItems.innerHTML = "";
+            for (let item in cart) {
+                let itemTotal = cart[item].quantity * cart[item].price;
+                totalAmount += itemTotal;
+
+                let div = document.createElement("div");
+                div.className = "cart-item";
+                div.innerHTML = `
+                    <strong>${item}</strong> - $${cart[item].price} each<br>
+                    Quantity: ${cart[item].quantity} <br>
+                    <strong>Subtotal: $${itemTotal.toFixed(2)}</strong>
+                    <hr>
+                `;
+                cartItems.appendChild(div);
+            }
+            document.getElementById("totalAmount").innerText = totalAmount.toFixed(2);
+
+            document.querySelectorAll('input[name="payment"]').forEach(radio => {
+                radio.addEventListener("change", function () {
+                    if (this.value === "paypal") {
+                        document.getElementById("cardSection").style.display = "none";
+                        document.getElementById("paypalButton").style.display = "block";
+                    } else {
+                        document.getElementById("cardSection").style.display = "block";
+                        document.getElementById("paypalButton").style.display = "none";
+                    }
+                });
+            });
+
+            document.getElementById("checkoutForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                alert("Thank you for your purchase! Your order has been placed.");
+                localStorage.removeItem("cart");
+                window.location.href = "index.html";
+            });
+
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: { value: totalAmount.toFixed(2) }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function () {
+                        alert("Payment successful! Your order is confirmed.");
+                        localStorage.removeItem("cart");
+                        window.location.href = "index.html";
+                    });
+                }
+            }).render("#paypalButton");
+        });
+    </script>
+  </div>
+
+  <section id="footer">
+    <div class="container footer-container mt-5 pt-3">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
+        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <h5 class="py-3">Our Address</h5>
+          <ul class="nav flex-column">
+            <li class="location text-capitalize d-flex align-items-center">
+              <svg class="text-primary me-1" width="16" height="16">
+                <use xlink:href="#location"></use>
+              </svg>Western Africa
+            </li>
+            <li class="phone text-capitalize d-flex align-items-center">
+              <svg class="text-primary me-1" width="16" height="16">
+                <use xlink:href="#phone"></use>
+              </svg>+### ### ####
+            </li>
+            <li class="time text-capitalize d-flex align-items-center">
+              <svg class="text-primary me-1" width="16" height="16">
+                <use xlink:href="#email"></use>
+              </svg>partnerships@nutricycle.com
+            </li>
+          </ul>
+          <ul class="social-links d-flex flex-wrap list-unstyled mt-4">
+            <li class="social me-4">
+              <a href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social me-4">
+              <a href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social me-4">
+              <a href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social me-4">
+              <a href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social me-4">
+              <a href="#">
+                <svg width="16" height="16">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <h5 class="py-3">Quick links</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a href="/about.html" class="text-uppercase p-0 "> About us </a></li>
+            <li class="nav-item"><a href="/impacts.html" class="text-uppercase p-0 "> Impacts </a></li>
+            <li class="nav-item"><a href="/contact.html" class="text-uppercase p-0 "> Contact us </a></li>
+            <li class="nav-item"><a href="/cart.html" class="text-uppercase p-0 "> Cart </a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <h5 class="py-3">Project Gallery</h5>
+          <!-- Add a scrollable container -->
+          <div class="gallery-container">
+            <div class="row g-1 project-gallery">
+              <!--Add Pictures-->
+            </div>
+          </div>
+        </div>      
+        <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+          <h5 class="py-3">Stay Updated</h5>
+          <p>Subscribe to our newsletter for the latest updates, insights, and special offers.</p>
+          <form class=" position-relative">
+            <input type="text" class="form-control rounded-5 px-4 py-2 bg-transparent" placeholder="Your email address">
+            <a href="#" class="position-absolute top-50 end-0 translate-middle-y bg-primary rounded-circle p-1 mx-1">
+              <svg class="text-white" width="25" height="25">
+                <use xlink:href="#send"></use>
+              </svg>
+            </a>
+          </form>
+        </div>
+
+      </footer>
+    </div>
+
+    <hr class="text-black">
+
+    <div class="container">
+      <footer class="row align-items-center py-2">
+        <div class="col-md-6 ">
+          <p>© 2024 NutriCycle - All rights reserved</p>
+
+      </footer>
+    </div>
+  </section>
+  
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+</body>
+
+</html>

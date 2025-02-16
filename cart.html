@@ -49,6 +49,31 @@
 
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body { margin: 0; background-color: #f4f4f4; }
+    .header { font-family: var(--body-font); font-size: 16px; font-weight: 400; line-height: 164%; letter-spacing: 0.32px; color: var(--dark-color); margin: 0;}
+    .container1 { width: 80%; margin: auto; overflow: hidden; display: flex; }
+    .header-container { background: #27ae60; color: white; padding: 20px; text-align: center; font-size: 24px; }
+    .filter-section, .checkout-section { width: 20%; padding: 20px; background: #ddd; }
+    .product-list { width: 60%; padding: 20px; }
+    .product { display: flex; justify-content: space-between; padding: 10px; background: white; margin-bottom: 10px; align-items: center; border-bottom: 2px solid #ddd; }
+    .btn { background: #27ae60; color: white; padding: 10px; border: none; cursor: pointer; border-radius: 5px; }
+    .checkout-btn { width: 100%; background: #e74c3c; }
+    .hidden { display: none; }
+    .checkout-toggle { cursor: pointer; text-align: center; background: #555; color: white; padding: 10px; }
+    .checkout-items { padding: 10px; background: white; }
+    .delete-btn { background: #e74c3c; color: white; padding: 5px; border: none; cursor: pointer; margin-left: 10px; }
+    .quantity, .checkout-quantity { width: 50px; text-align: center; border: 1px solid #27ae60; padding: 5px; border-radius: 5px; }
+    .filter-section button { display: block; margin: 10px 0; }
+    .cart-item { padding: 10px 0; border-bottom: 2px solid #ddd; }
+    .partner-btn { margin-top: 20px; background: #3498db; }
+    .product { display: flex; flex-direction: column; margin-bottom: 10px; }
+    .product span { margin-top: 5px; font-size: 14px; }
+    .product button { margin-top: 5px; }
+    .checkout-item { display: flex; flex-direction: column; }
+    .disclaimer { background-color: #f8f9fa; padding: 0px; border-left: 4px solid #28a745; color: #333; margin: 0px; }
+  </style>
 </head>
 
 <body>
@@ -281,6 +306,207 @@
       </div>
     </nav>
   </header>
+
+  <div class="header-container">NutriCycle Shop</div>
+  <div class="disclaimer text-center">
+    <p style="font-size: 12px"><strong>Disclaimer:</strong> All products are made using the PLA (Polylactic Acid) method or other biodegradable plastic materials. However, the composition and biodegradability levels may vary depending on the product.</p>
+  </div>
+  <div class="container1">
+    <div class="filter-section">
+        <h3>Filter Items</h3>
+        <div class="filter-category">
+          <h4>Material Type</h4>
+          <label><input type="checkbox" class="filter-checkbox" value="biodegradable"> Biodegradable</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="organic"> Organic</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="recyclable"> Recyclable</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="compostable"> Compostable</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="plant-based"> Plant Based</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="reusable"> Reusable</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="recycled-material"> Recycled Material</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="starch-based"> Starch Based</label><br>
+        </div>
+        <div class="filter-category">
+          <h4>Product Type</h4>
+          <label><input type="checkbox" class="filter-checkbox" value="bottle"> Bottles</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="packaging"> Packaging</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="utensils"> Utensils</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="cups"> Cups</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="containers"> Containers</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="bags"> Bags</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="plates"> Plates</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="trays"> Trays</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="wraps"> Wraps</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="wraps"> Straws</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="cling-film"> Cling Film</label><br>
+          <label><input type="checkbox" class="filter-checkbox" value="raw-material"> Raw Material</label><br>
+        </div>
+        <button class="btn" id="filterBtn">Apply Filters</button>
+        <button class="btn" onclick="location.href='contact.html'">Partner With Us</button>
+    </div>
+    <div class="product-list" id="productList"></div>
+    <div class="checkout-section">
+      <div class="checkout-toggle">View Cart</div>
+      <div class="checkout-items">
+        <p>Items in Cart:</p>
+        <div id="cartItems"></div>
+        <p>Total: $<span id="totalAmount">0.00</span></p>
+        <button class="btn checkout-btn" onclick="location.href='checkout.html'">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    
+    const products = [
+      { name: "Biodegradable Bottles (6 pcs)", price: 4.99, tags: ["biodegradable", "bottle"] },
+      { name: "Organic Packaging (3 pcs)", price: 3.26, tags: ["organic", "packaging"] },
+      { name: "Eco-Friendly Utensils", price: 4.12, tags: ["recyclable", "utensils"] },
+      { name: "Compostable Cups (12 pcs)", price: 6.99, tags: ["compostable", "cups"] },
+      { name: "Recyclable Food Containers (10 pcs)", price: 14.99, tags: ["recyclable", "containers", "recycled-material"] },
+      { name: "Bamboo Cutlery Set", price: 7.32, tags: ["biodegradable", "plant-based", "utensils"] },
+      { name: "Reusable Water Bottle", price: 12.49, tags: ["recyclable", "reusable", "bottle"] },
+      { name: "Plant-Based Straws (25 pcs)", price: 4.99, tags: ["organic", "plant-based", "utensils", "straws"] },
+      { name: "Recycled Paper Plates (40 pcs)", price: 9.99, tags: ["recyclable", "recycled-material", "packaging", "plates"] },
+      { name: "Eco-Friendly Lunch Box", price: 15, tags: ["compostable", "containers"] },
+      { name: "Starch-Based Grocery Bags (100 pcs)", price: 10, tags: ["starch-based", "biodegradable", "bags"] },
+      { name: "Compostable Cling Wrap (30m)", price: 9, tags: ["compostable", "wraps", "cling-film"] },
+      { name: "Recycled Kraft Paper Bags (50 pcs)", price: 12, tags: ["recyclable", "recycled-material", "bags"] },
+      { name: "Sugarcane Fiber Plates (50 pcs)", price: 15, tags: ["biodegradable", "organic", "plant-based", "plates"] },
+      { name: "Cornstarch-Based Forks (100 pcs)", price: 18, tags: ["starch-based", "biodegradable", "utensils"] },
+      { name: "Reusable Silicone Food Covers (6 pcs)", price: 20, tags: ["reusable", "containers"] },
+      { name: "Plant-Based Trays (50 pcs)", price: 14, tags: ["organic", "plant-based", "biodegradable", "trays"] },
+      { name: "Compostable Coffee Cups with Lids (50 pcs)", price: 25, tags: ["compostable", "cups"] },
+      { name: "Biodegradable Takeout Boxes (50 pcs)", price: 30, tags: ["biodegradable", "compostable", "containers"] },
+      { name: "Recycled Clamshell Containers (100 pcs)", price: 40, tags: ["recyclable", "recycled-material", "containers"] },
+      { name: "PLA (Polylactic Acid) Granules (5kg)", price: 50, tags: ["biodegradable", "plant-based", "raw-material"] },
+      { name: "Cornstarch-Based Biodegradable Resin (10kg)", price: 90, tags: ["starch-based", "biodegradable", "raw-material"] },
+      { name: "Compostable Plastic Pellets (20kg)", price: 180, tags: ["compostable", "recyclable", "raw-material"] },
+      { name: "Eco-Friendly Moldable Bioplastic (15kg)", price: 140, tags: ["biodegradable", "compostable", "raw-material"] }
+    ];
+
+    function renderProducts() {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = ''; // Clear the current list of products
+
+      products.forEach(product => {
+        let div = document.createElement('div');
+        div.className = "product";
+
+        // Check if product is already in the cart
+        let cartItem = cart[product.name];
+
+        // If product is in the cart, show quantity, otherwise show Add to Cart button
+        if (cartItem) {
+          div.innerHTML = `${product.name} - $${product.price} 
+            <span>Quantity: ${cartItem.quantity}</span>
+            <button class='btn add-to-cart' data-product="${product.name}">Add to Cart</button>`;
+        } else {
+          div.innerHTML = `${product.name} - $${product.price} 
+            <button class='btn add-to-cart' data-product="${product.name}">Add to Cart</button>`;
+        }
+        productList.appendChild(div);
+      });
+
+      // Add event listeners for all "Add to Cart" buttons
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+          button.addEventListener('click', function() {
+            let productName = this.getAttribute('data-product');
+            let product = products.find(p => p.name === productName);
+
+            // If item is not in cart, add with quantity 1, else increase quantity
+            if (!cart[productName]) {
+                cart[productName] = { price: product.price, quantity: 1 };
+            } else {
+                cart[productName].quantity += 1;
+            }
+
+            saveCart();
+            updateCart();
+            renderProducts();  // Re-render to update quantities on the page
+          });
+      });
+    }
+
+    function updateCart() {
+      let cartContainer = document.getElementById('cartItems');
+      let total = 0;
+      cartContainer.innerHTML = '';
+
+      for (let item in cart) {
+        let itemTotal = cart[item].quantity * cart[item].price;
+        let div = document.createElement('div');
+        div.className = "cart-item";
+        div.innerHTML = `
+          ${item} <br>
+          <strong>$${cart[item].price} each</strong> <br>
+          <input type='number' class='checkout-quantity' value='${cart[item].quantity}' min='1' onchange='updateQuantity("${item}", this.value)'>
+          <button class='delete-btn' onclick='removeItem("${item}")'>Remove</button>
+          <br><strong>Subtotal: $${itemTotal.toFixed(2)}</strong>
+        `;
+        cartContainer.appendChild(div);
+        total += itemTotal;
+      }
+      document.getElementById('totalAmount').innerText = total.toFixed(2);
+    }
+  
+    function updateQuantity(item, quantity) {
+      // Make sure the quantity is at least 1
+      quantity = Math.max(1, parseInt(quantity) || 1);
+      cart[item].quantity = quantity;
+      saveCart();
+      updateCart();
+      renderProducts(); // Re-render the products to show updated quantity
+    }
+  
+    function removeItem(item) {
+      delete cart[item];  // Remove item from the cart
+      saveCart();
+      updateCart();
+      renderProducts();  // Re-render to update display after removal
+    }
+  
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  
+    document.getElementById("filterBtn").addEventListener("click", function() {
+      let selectedFilters = Array.from(document.querySelectorAll(".filter-checkbox:checked")).map(cb => cb.value);
+
+      // If no filter is selected, show all products
+      if (selectedFilters.length === 0) {
+        renderProducts();
+      } else {
+        const filteredProducts = products.filter(product => {
+            return selectedFilters.every(filter => product.tags.includes(filter));
+        });
+        renderFilteredProducts(filteredProducts);
+      }
+    });
+  
+    function renderFilteredProducts(filteredProducts) {
+      const productList = document.getElementById('productList');
+      productList.innerHTML = ''; // Clear the current list of products
+
+      if (filteredProducts.length === 0) {
+        productList.innerHTML = '<p>No products found</p>'; // If no products match, show a message
+      } else {
+        filteredProducts.forEach(product => {
+          let div = document.createElement('div');
+          div.className = "product";
+          div.innerHTML = `${product.name} - $${product.price} <button class='btn add-to-cart'>Add to Cart</button>`;
+          productList.appendChild(div);
+        });
+      }
+    }
+  
+    document.querySelector('.checkout-toggle').addEventListener('click', function () {
+      document.querySelector('.checkout-items').classList.toggle('hidden');
+    });
+  
+    renderProducts();
+    updateCart();
+  </script>
 
   <section id="footer">
     <div class="container footer-container mt-5 pt-3">

@@ -568,10 +568,14 @@ a.nav-link:hover {
   border-radius: 0.25rem;
 }
 
-@media (max-width: 999px) {
+
+@media (max-width: 464px) {
   a.nav-link {
     font-size: 30px;
     padding: 15px 0 15px 0 !important;
+  }
+  body {
+    padding-top: 178px;
   }
 }
 
@@ -884,6 +888,28 @@ p {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) { 
+  .impact-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .stat-box {
+    width: 100%;
+  }
+
+  .solutions-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .solution-card {
+    width: 100%;
+  }
+}
+
 /* 4.5 Finances Section
 /*----------------------------------------------*/
 
@@ -1066,7 +1092,7 @@ iconify-icon.quote {
 }
 
 /*--------------------------------------------------------------
-Resource Card
+Resource Card/Bibliography
 --------------------------------------------------------------*/
 
 .resource-card {
@@ -1102,14 +1128,6 @@ Resource Card
 
 .resource-card {
   background: rgba(190, 244, 182, 0.8); /* White overlay */
-}
-
-#resources {
-  background: linear-gradient(to bottom, #e8f2e8, #91cd93); /* Dark Green to Light Green */
-  color: #333; /* Ensures text remains readable */
-  background-size: cover;  /* Makes sure it's fully visible */
-  background-position: center;
-  min-height: 100vh;  /* Ensures it takes up space */
 }
 
 @media (max-width: 768px) {
