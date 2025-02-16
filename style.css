@@ -674,10 +674,7 @@ section#slider .main-slider-button-next.swiper-button-disabled,
 }
 
 .logo1 {
-  position: absolute;
-  top: 210px;
-  right: 800px;
-  width: 150px; /* Adjust size */
+  width: 120px; /* Adjust size */
   height: auto;
 }
 
